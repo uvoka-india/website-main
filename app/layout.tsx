@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   creator: "UVOKA",
   publisher: "UVOKA",
   generator: 'Next.js',
-  metadataBase: new URL('https://uvoka.advaitt.tech'),
+  metadataBase: new URL('https://uvoka.in'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://uvoka.advaitt.tech',
+    url: 'https://uvoka.in',
     siteName: 'UVOKA',
     title: 'UVOKA - LinkedIn Personal Branding Agency',
     description: 'We help founders, executives and companies build LinkedIn presences that lead, influence, and last. Transform your personal brand with strategic LinkedIn growth.',

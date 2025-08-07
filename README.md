@@ -4,7 +4,7 @@ A modern, responsive website for UVOKA, a LinkedIn personal branding agency. Bui
 
 ## 🚀 Live Demo
 
-Visit the live website: [https://uvoka.advaitt.tech](https://uvoka.advaitt.tech)
+Visit the live website: [https://uvoka.in](https://uvoka.in)
 
 ## 📋 Table of Contents
 
