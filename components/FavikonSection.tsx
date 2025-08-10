@@ -2,8 +2,8 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import Image from "next/image"
 import { Trophy } from "lucide-react"
+import Image from "next/image"
 
 export default function FavikonSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -29,22 +29,30 @@ export default function FavikonSection() {
     }
   };
 
-  const favicons = [
+  const achievements = [
     {
-      src: "/favicon (2).jpeg",
-      alt: "Favikon Client 2"
+      percentage: "Top 6%",
+      country: "LinkedIn India",
+      color: "green",
+      icon: "green"
     },
     {
-      src: "/favicon (4).jpg",
-      alt: "Favikon Client 3"
+      percentage: "Top 6%",
+      country: "LinkedIn UAE",
+      color: "green",
+      icon: "green"
     },
     {
-      src: "/favicon (1).jpeg",
-      alt: "Favikon Client 1"
+      percentage: "Top 13%",
+      country: "LinkedIn India",
+      color: "orange",
+      icon: "orange"
     },
     {
-      src: "/favicon (4).jpeg",
-      alt: "Favikon Client 4"
+      percentage: "Top 16%",
+      country: "LinkedIn India",
+      color: "orange",
+      icon: "orange"
     }
   ];
 
@@ -81,32 +89,68 @@ export default function FavikonSection() {
           </motion.p>
         </motion.div>
 
-                 <motion.div 
-           className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-4 sm:px-8"
-           variants={containerVariants}
-           initial="hidden"
-           animate={isInView ? "visible" : "hidden"}
-         >
-           {favicons.map((favicon, index) => (
-             <motion.div
-               key={index}
-               className="flex justify-center p-2 sm:p-4"
-               variants={itemVariants}
-               whileHover={{ scale: 1.05 }}
-               transition={{ duration: 0.3 }}
-             >
-                               <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
-                  <Image
-                    src={favicon.src}
-                    alt={favicon.alt}
-                    fill
-                    className="object-contain drop-shadow-lg rounded-lg"
-                    sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
-                  />
-                </div>
-             </motion.div>
-           ))}
-         </motion.div>
+        <motion.div 
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-4 sm:px-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {achievements.map((achievement, index) => (
+            <motion.div
+              key={index}
+              className="flex justify-center p-2 sm:p-4"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+                             <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center p-3 sm:p-3 md:p-4 hover:shadow-xl transition-all duration-300">
+                                 {/* Circle Icon */}
+                 <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-2 sm:mb-3 ${
+                   achievement.icon === "green" 
+                     ? "bg-green-100 dark:bg-green-900/30" 
+                     : "bg-orange-100 dark:bg-orange-900/30"
+                 }`}>
+                   <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${
+                     achievement.icon === "green" 
+                       ? "bg-green-500" 
+                       : "bg-orange-500"
+                   }`}>
+                     <Trophy className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                   </div>
+                 </div>
+                 
+                 {/* Percentage */}
+                 <div className={`text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2 ${
+                   achievement.color === "green" 
+                     ? "text-green-600 dark:text-green-400" 
+                     : "text-orange-600 dark:text-orange-400"
+                 }`}>
+                   {achievement.percentage}
+                 </div>
+                 
+                 {/* LinkedIn Logo */}
+                 <div className="mb-1 sm:mb-2">
+                   <div className="relative w-5 h-5 sm:w-6 sm:h-6 mx-auto">
+                     <Image
+                       src="/faviz.webp"
+                       alt="LinkedIn"
+                       fill
+                       className="object-contain rounded"
+                       sizes="(max-width: 640px) 20px, 24px"
+                     />
+                   </div>
+                 </div>
+                 
+                 {/* LinkedIn and Country Text */}
+                 <div className="text-center">
+                   <span className="text-xs font-medium text-gray-700 dark:text-gray-300 leading-tight">
+                     {achievement.country}
+                   </span>
+                 </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
