@@ -103,7 +103,7 @@ export default function FavikonSection() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-                             <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center p-3 sm:p-3 md:p-4 hover:shadow-xl transition-all duration-300">
+                             <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center p-3 sm:p-3 md:p-4 hover:shadow-xl transition-all duration-300">
                                  {/* Circle Icon */}
                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-2 sm:mb-3 ${
                    achievement.icon === "green" 
