@@ -1,6 +1,6 @@
 # UVOKA - LinkedIn Personal Branding Agency Website
 
-A modern, responsive website for UVOKA, a LinkedIn personal branding agency. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion for smooth animations and interactions.
+A modern, responsive website for UVOKA, a LinkedIn personal branding agency. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion for smooth animations and interactions
 
 ## 🚀 Live Demo
 
