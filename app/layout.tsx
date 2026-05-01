@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import Script from "next/script"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
-import { GoogleAnalytics } from "next-google-analytics"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -93,7 +92,6 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <GoogleAnalytics trackPageViews />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
