@@ -1,6 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
+import { GoogleAnalytics } from "next-google-analytics"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -69,8 +72,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics - gtag.js */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-D1YGWBHKNP"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-D1YGWBHKNP');
+            `,
+          }}
+        />
+      </head>
       <body className={inter.className}>
-
+        <GoogleAnalytics trackPageViews />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -79,6 +102,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
